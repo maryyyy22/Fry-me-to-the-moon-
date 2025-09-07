@@ -1,3 +1,5 @@
+🌙 Fly Me to the Moon
+
 🌐 Smart Cafeteria Management System
 Powered by Web Development & Database Integration
 
@@ -15,14 +17,10 @@ This system was built to solve the problem of long queues and disorganized order
 📊 Order tracking for efficiency and transparency.
 
 ⚙️ System Workflow Overview
-
-Student Order 👩‍🎓 → Students log in and place orders online.
-
-Chef Preparation 👨‍🍳 → Orders are sent directly to the chef for preparation.
-
-Cashier Processing 💵 → Once ready, the chef forwards the order to the cashier.
-
-Student Delivery 🍽️ → The cashier confirms payment, finalizes the order, and delivers it to the student.
+👩‍🎓 Student Order → Students log in and place orders online.
+👨‍🍳 Chef Preparation → Orders are sent directly to the chef for preparation.
+💵 Cashier Processing → Once ready, the chef forwards the order to the cashier.
+🍽️ Student Delivery → The cashier confirms payment, finalizes the order, and delivers it to the student.
 
 🧾 Key Benefits
 
