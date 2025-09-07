@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fry me to the Moon – Meals</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/meals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+
+<header>
+    <div class="logo"><i class="fas fa-utensils"></i><span>Fry me to the Moon</span></div>
+    <div class="header-buttons">
+        <a href="../index.html" class="login">Logout</a>
+        <!-- <a href="#" class="cart"><i class="fas fa-shopping-cart"></i> Cart</a> -->
+    </div>
+</header>
+
+<section class="meals-hero">
+    <h1 id="heroTitle">Our Menu</h1>
+    <p>Pick your favourite meal or filter by category</p>
+
+    <div class="filters">
+        <button data-filter="all"   class="active">All</button>
+        <button data-filter="burgers">Burgers & Wraps</button>
+        <button data-filter="pizza">Pizza & Pasta</button>
+        <button data-filter="salad">Salads & Healthy</button>
+        <button data-filter="snack">Snacks & Sides</button>
+        <button data-filter="drink">Drinks & Desserts</button>
+        <button data-filter="vegan">Vegetarian/Vegan</button>
+    </div>
+</section>
+
+<!-- ===== Meals grid ===== -->
+<section class="meals-grid">
+
+    <!-- *** Burgers / Wraps *** -->
+    <div class="meal-card" data-cat="burgers">
+        <img src="../imgs/burgers/burgers.jpg" alt="Classic Cheeseburger">
+        <div class="inner">
+            <h3>Classic Cheeseburger</h3>
+            <p>Beef patty, cheddar, lettuce, tomato, moon-sauce</p>
+            <span class="price">35.99 L.E</span>
+            <button type="button" class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <div class="meal-card" data-cat="burgers">
+        <img src="../imgs/burgers/Chicken Caesar Wrap.avif" alt="Chicken Caesar Wrap">
+        <div class="inner">
+            <h3>Chicken Caesar Wrap</h3>
+            <p>Grilled chicken, romaine & parmesan in a spinach tortilla</p>
+            <span class="price">24.99 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <!-- *** Pizza / Pasta *** -->
+    <div class="meal-card" data-cat="pizza">
+        <img src="../imgs/pizza/Margherita Pizza.jpg" alt="Margherita Pizza">
+        <div class="inner">
+            <h3>Margherita Pizza</h3>
+            <p>Tomato, mozzarella, basil – a classic</p>
+            <span class="price">49.50 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <div class="meal-card" data-cat="pizza">
+        <img src="../imgs/pizza/Penne Alfredo.jpg" alt="Penne Alfredo">
+        <div class="inner">
+            <h3>Penne Alfredo</h3>
+            <p>Creamy parmesan sauce with penne pasta</p>
+            <span class="price">20.25 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <!-- *** Salads / Healthy *** -->
+    <div class="meal-card" data-cat="salad">
+        <img src="../imgs/healthy/Greek Salad.jpg" alt="Greek Salad">
+        <div class="inner">
+            <h3>Greek Salad</h3>
+            <p>Crisp greens, olives, feta & vinaigrette</p>
+            <span class="price">13.75 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <div class="meal-card" data-cat="salad">
+        <img src="../imgs/healthy/Yogurt with granola.jpg" alt="Chicken Caesar Wrap">
+        <div class="inner">
+            <h3>Yogurt With Granola</h3>
+            <p>Healthy yougurt with fruits</p>
+            <span class="price">15.40 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <!-- *** Snacks / Sides *** -->
+    <div class="meal-card" data-cat="snack">
+        <img src="../imgs/snacks/Sweet Potato Fries.jpg" alt="Sweet Potato Fries">
+        <div class="inner">
+            <h3>Sweet Potato Fries</h3>
+            <p>Oven-baked, lightly seasoned</p>
+            <span class="price">8.25 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <div class="meal-card" data-cat="snack">
+        <img src="../imgs/snacks/Pretzels.jpg" alt="Chicken Caesar Wrap">
+        <div class="inner">
+            <h3>Pretzels</h3>
+            <p>Crunchy, salty, and healthy snack</p>
+            <span class="price">10.50 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <!-- *** Drinks / Desserts *** -->
+    <div class="meal-card" data-cat="drink">
+        <img src="../imgs/drinks/Chocolate Milkshake.jpg" alt="Chocolate Milkshake">
+        <div class="inner">
+            <h3>Chocolate Milkshake</h3>
+            <p>Cocoa, vanilla ice-cream, topped with whipped cream</p>
+            <span class="price">29.99 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+
+    <!-- *** Vegetarian / Vegan *** -->
+    <div class="meal-card" data-cat="vegan">
+        <img src="../imgs/vegan/Falafel Bowl.jpg" alt="Falafel Bowl">
+        <div class="inner">
+            <h3>Falafel Bowl (Vegan)</h3>
+            <p>Falafel, quinoa, hummus, mixed veggies</p>
+            <span class="price">25.40 L.E</span>
+            <button class="add-to-order">Add to Order</button>
+        </div>
+    </div>
+</section>
+
+<div class="order-summary-popup">
+    <div class="order-summary-header">
+        <span class="order-count">0 items</span>
+        <span class="order-total-price">0.00 L.E</span>
+        <button class="toggle-order-details">▼</button>
+    </div>
+    
+    <div class="order-details">
+        <div class="order-items">
+        </div>
+        <button class="confirm-order">Confirm Order</button>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Contact Us</a>
+        <a href="#">Opening Hours</a>
+        <a href="#">About Us</a>
+    </div>
+    <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+    </div>
+    <p class="copyright">© 2025 School Eats. All rights reserved.</p>
+</footer>
+
+<script src="../scripts/meals.js"></script>
+</body>
+</html>

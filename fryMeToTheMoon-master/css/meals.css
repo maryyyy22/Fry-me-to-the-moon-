@@ -1,0 +1,248 @@
+.meals-hero {
+    background: #E63946;
+    color:#fff;
+    padding:4rem 1rem 3rem;
+    text-align:center;
+}
+.meals-hero h1 {font-size:2.5rem; margin-bottom:.5rem;}
+.meals-hero p  {opacity:.9;}
+
+.filters {
+    margin:2rem auto 0;
+    display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;
+}
+.filters button {
+    border:none; background:#F4D35E; color:#333;
+    padding:.6rem 1.4rem; border-radius:25px;
+    font-weight:bold; cursor:pointer; transition:.3s;
+}
+.filters button.active, .filters button:hover {background:#FFD700;}
+
+.meals-grid {
+    max-width:1100px; margin:3rem auto; padding:0 1rem;
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:2rem;
+}
+.meal-card {
+    overflow:hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.meal-card:hover {
+    transform: translateY(-5px);
+}
+.meal-card .inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    padding: 1rem; 
+}
+
+.meal-card .price {
+    color:#E63946;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.meal-card.hide {display:none;}
+
+.meal-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.meal-card .add-to-order {
+    background: #E63946;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.meal-card .add-to-order:hover {
+    background: #C1121F;
+}
+
+.order-summary-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-summary-popup.visible {
+    bottom: 0;
+}
+
+.order-summary-header {
+    padding: 12px 20px;
+    background: #E63946;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.order-details {
+    overflow-y: auto;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    background: white;
+}
+
+.order-summary-popup.expanded .order-details {
+    max-height: 50vh;
+}
+
+.order-summary-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.order-items {
+    padding: 0 20px;
+}
+
+/* Add these styles to your existing CSS */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.order-item-name {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.order-item-price {
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.remove-item {
+    background: #ff4757;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.remove-item:hover {
+    background: #ff6b81;
+    transform: scale(1.1);
+}
+
+.order-item-quantity {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.quantity-btn {
+    background: #f1f2f6;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.quantity-value {
+    margin: 0 8px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding-top: 1rem;
+    border-top: 2px solid #eee;
+}
+
+.toggle-order-details {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.order-actions {
+    text-align: right;
+}
+
+.confirm-order {
+    width: 100%;
+    padding: 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirm-order:hover {
+    background: #388E3C;
+}
+
+.remove-item {
+    background: #E63946;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.remove-item:hover {
+    background: #C1121F;
+}
+
+@keyframes highlight {
+    0% { background-color: rgba(255, 215, 0, 0.3); }
+    100% { background-color: transparent; }
+}
+
+.highlight {
+    animation: highlight 0.5s ease;
+}

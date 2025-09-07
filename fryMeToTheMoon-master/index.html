@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Fry Me to the Moon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/signIn.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Fry Me to the Moon</span>
+            </div>
+        </header>
+        
+        <main class="signin-container">
+            <div class="signin-card">
+                <div class="card-header">
+                    <h1>Welcome Back!</h1>
+                    <p>Please select your account type to continue</p>
+                </div>
+
+                <div class="role-selection">
+                    <button type="button" class="role-btn student" data-role="student">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Student</span>
+                    </button>
+                    <button type="button" class="role-btn chief" data-role="chief">
+                        <i class="fas fa-cheese"></i>
+                        <span>Chef</span>
+                    </button>
+                    <button type="button" class="role-btn cashier" data-role="cashier">
+                        <i class="fas fa-cash-register"></i>
+                        <span>Cashier</span>
+                    </button>
+                </div>
+
+                <form class="signin-form" id="student-form">
+                    <div class="form-group">
+                        <label for="student-email">Student Email</label>
+                        <input type="email" id="student-email" placeholder="student@school.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-password">Password</label>
+                        <input type="password" id="student-password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn primary">Sign In</button>
+                </form>
+
+                <form class="signin-form" id="chief-form">
+                    <div class="form-group">
+                        <label for="chief-email">Chef Email</label>
+                        <input type="email" id="chief-email" placeholder="chef@frymetothemoon.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="chief-password">Password</label>
+                        <input type="password" id="chief-password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn primary">Sign In</button>
+                </form>
+
+                <form class="signin-form" id="cashier-form">
+                    <div class="form-group">
+                        <label for="cashier-email">Cashier Email</label>
+                        <input type="email" id="cashier-email" placeholder="cashier@frymetothemoon.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cashier-password">Password</label>
+                        <input type="password" id="cashier-password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn primary">Sign In</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-phone-alt"></i> Contact Us</a>
+                    <a href="#"><i class="far fa-clock"></i> Opening Hours</a>
+                    <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="copyright">© 2025 Fry Me to the Moon. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="scripts/signIn.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier - School Eats</title>
+    <link rel="stylesheet" href="../css/Cashier_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic styles if CSS file isn't loading */
+        .payment-btn.paid {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .payment-btn.notify {
+            background-color: #2196F3;
+            color: white;
+        }
+        .paid-confirm {
+            animation: pulse 0.5s ease;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-cash-register"></i>
+            <span>School Eats - Cashier</span>
+        </div>
+        <div class="header-buttons">
+            <a href="../index.html" class="logout">Logout</a>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <h1><i class="fas fa-receipt"></i> Ready for Payment</h1>
+        <div class="order-container">
+            <!-- Order #1 -->
+            <div class="order-card completed" data-order-id="1254">
+                <div class="order-header">
+                    <span class="order-id">Order #1254</span>
+                    <span class="order-time">Ready 5 mins ago</span>
+                </div>
+                <div class="order-items">
+                    <div class="order-item">
+                        <span class="item-name">Cheeseburger Meal</span>
+                        <span class="item-qty">x2 (35.99 LE each)</span>
+                    </div>
+                    <div class="order-item">
+                        <span class="item-name">French Fries</span>
+                        <span class="item-qty">x1 (8.25 LE)</span>
+                    </div>
+                </div>
+                <div class="payment-amount">
+                    Total: <span>80.23 LE</span>
+                </div>
+                <div class="order-actions">
+                    <div class="payment-actions">
+                        <button class="payment-btn paid" onclick="markAsPaid(event, 1254)">
+                            <i class="fas fa-check-circle"></i> Mark Paid
+                        </button>
+                        <button class="payment-btn notify" onclick="notifyStudent(event, 1254, 'John D.')">
+                            <i class="fas fa-bell"></i> Notify Student
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order #2 -->
+            <div class="order-card completed" data-order-id="1253">
+                <div class="order-header">
+                    <span class="order-id">Order #1253</span>
+                    <span class="order-time">Ready 8 mins ago</span>
+                </div>
+                <div class="order-items">
+                    <div class="order-item">
+                        <span class="item-name">Vegetable Pizza</span>
+                        <span class="item-qty">x1 (7.99 LE)</span>
+                    </div>
+                    <div class="order-item">
+                        <span class="item-name">Orange Juice</span>
+                        <span class="item-qty">x1 (1.99 LE)</span>
+                    </div>
+                </div>
+                <div class="payment-amount">
+                    Total: <span>9.98 LE</span>
+                </div>
+                <div class="order-actions">
+                    <div class="payment-actions">
+                        <button class="payment-btn paid" onclick="markAsPaid(event, 1253)">
+                            <i class="fas fa-check-circle"></i> Mark Paid
+                        </button>
+                        <button class="payment-btn notify" onclick="notifyStudent(event, 1253, 'Sarah M.')">
+                            <i class="fas fa-bell"></i> Notify Student
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Payment Help</a>
+            <a href="#">Refund Policy</a>
+        </div>
+        <p class="copyright">© 2024 School Eats - Cashier System</p>
+    </footer>
+
+    <script>
+    // Notify student to come collect their order
+    function notifyStudent(event, orderId, studentName) {
+        alert(`Notification sent to ${studentName} to collect Order #${orderId}`);
+        // Visual feedback
+        const btn = event.target;
+        btn.innerHTML = '<i class="fas fa-check"></i> Notified';
+        btn.style.backgroundColor = '#4CAF50';
+        btn.disabled = true;
+    }
+
+    // Mark order as paid
+    function markAsPaid(event, orderId) {
+        if (confirm(`Mark Order #${orderId} as paid?`)) {
+            const orderCard = event.target.closest('.order-card');
+            const btn = orderCard.querySelector('.paid');
+            
+            // Add temporary press effect
+            btn.classList.add('paid-confirm');
+            
+            // Update UI after a short delay
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check-double"></i> Paid';
+                btn.disabled = true;
+                orderCard.style.opacity = '0.7';
+                orderCard.querySelector('.notify').disabled = true;
+                
+                // Remove animation class
+                setTimeout(() => {
+                    btn.classList.remove('paid-confirm');
+                }, 500);
+            }, 300);
+        }
+    }
+</script>
+    </script>
+</body>
+</html>

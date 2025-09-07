@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+  <style>
+    /* ===== GLOBAL RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      direction: rtl;
+      padding: 04rem;
+      line-height: 1.6;
+    }
+
+    .rating-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-right: 5px solid #E63946;
+      text-align: center;
+    }
+
+    .rating-container h2 {
+      margin-bottom: 1.5rem;
+      color: #E63946;
+      font-size: 1.8rem;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .star {
+      font-size: 40px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .star.gold {
+      color: #FFD700;
+    }
+
+    #feedbackBox {
+      display: none;
+      margin-top: 1rem;
+      text-align: right;
+    }
+
+    #feedbackBox h3 {
+      margin-bottom: 0.5rem;
+      color: #E63946;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      resize: none;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    textarea:focus {
+      border-color: #E63946;
+    }
+
+    .submit-btn {
+      margin-top: 1.5rem;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #1976D2;
+      transform: translateY(-2px);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+  </style>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <i class="fas fa-utensils"></i>
+        <span>Fry me to the Moon</span>
+    </div>
+    <div class="header-buttons">
+        <a href="../index.html" class="login">Logout</a>
+        <!-- <a href="./meals.html" class="cart"><i class="fas fa-shopping-cart"></i> Cart</a> -->
+    </div>
+  </header>
+
+  <div class="rating-container">
+    <h2>Rate our service</h2>
+
+    <div class="stars">
+      <span class="star" data-value="1">&#9733;</span>
+      <span class="star" data-value="2">&#9733;</span>
+      <span class="star" data-value="3">&#9733;</span>
+      <span class="star" data-value="4">&#9733;</span>
+      <span class="star" data-value="5">&#9733;</span>
+    </div>
+
+    <div id="feedbackBox">
+      <h3>Write your opinion:</h3>
+      <textarea placeholder="What do you think of the food and the service?"></textarea>
+      <button class="submit-btn">Send your opinion</button>
+    </div>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('.star');
+    const feedbackBox = document.getElementById('feedbackBox');
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const rating = parseInt(star.getAttribute('data-value'));
+
+        stars.forEach(s => {
+          const val = parseInt(s.getAttribute('data-value'));
+          s.classList.toggle('gold', val <= rating);
+        });
+
+        feedbackBox.style.display = 'block';
+      });
+    });
+    
+  </script>
+
+</body>
+</html>

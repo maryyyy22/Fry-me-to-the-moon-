@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Payment</title>
+    <link rel="stylesheet" href="../css/confirm.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <span>Fry me to the Moon</span>
+        </div>
+        <a href="../index.html" class="login">Logout</a>
+        <!-- <a href="#" class="cart"><i class="fas fa-shopping-cart"></i> Cart</a> -->
+    </header>
+
+    <main>
+        <h1>Confirm Your Payment</h1>
+        <p>Select your preferred payment method and proceed to checkout.</p>
+        <form id="payment-form">
+            <div class="payment-options">
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Credit Card" required>
+                    <span>Credit/Debit Card</span>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Wallet">
+                    <span>Wallet</span>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Cash">
+                    <span>Cash at Checkout</span>
+                </label>
+            </div>
+            <button type="submit">Confirm Payment</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2024 School Eats. All rights reserved.</p>
+        <p>
+            <a href="#">Contact Us</a> | 
+            <a href="#">Opening Hours</a> | 
+            <a href="#">About Us</a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
+            alert(`You selected: ${selectedPayment}`);
+            // Save the selected payment method for further processing
+            localStorage.setItem('selectedPayment', selectedPayment);
+            window.location.href = 'waiting.html'; // Redirect to waiting page
+        });
+    </script>
+</body>
+</html>

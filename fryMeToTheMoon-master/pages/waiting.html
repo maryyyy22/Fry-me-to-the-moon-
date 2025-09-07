@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting for Confirmation</title>
+    <link rel="stylesheet" href="../css/confirm.css">
+    <script>
+        let startTime;
+
+        // Start timing when the page loads
+        window.onload = () => {
+            startTime = new Date();
+        };
+
+        // Calculate waiting time and redirect to feedback.html
+        function takeOrder() {
+            const endTime = new Date();
+            const waitingTime = Math.floor((endTime - startTime) / 1000); // in seconds
+            
+            // Store waiting time for use on the feedback page (optional)
+            localStorage.setItem("waitingTime", waitingTime);
+            
+            // Redirect to feedback.html after 2 seconds (for user to read the message)
+            setTimeout(() => {
+                window.location.href = "Feedback.html";
+            }, 2000);
+            
+            // Display message and hide button
+            document.getElementById("waiting-result").innerText = `Thank you for waiting! You waited ${waitingTime} seconds. Redirecting to feedback...`;
+            document.getElementById("take-order-button").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <span>Fry me to the Moon</span>
+        </div>
+        <div class="header-buttons">
+            <a href="../index.html" class="login">Logout</a>
+            <a href="#" class="cart"><i class="fas fa-shopping-cart"></i> Cart</a>
+        </div>
+    </header>
+
+    <section class="waiting-section">
+        <h1 class="waiting-title">Waiting for Confirmation</h1>
+        <p class="waiting-message">Your payment process is in progress. Please wait...</p>
+        <button id="take-order-button" onclick="takeOrder()">Take Your Order</button>
+        <p id="waiting-result" class="waiting-result"></p>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">Opening Hours</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <p class="copyright">© 2024 School Eats. All rights reserved.</p>
+    </footer>
+</body>
+</html>
