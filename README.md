@@ -31,3 +31,7 @@ Maintains order and prevents cafeteria overcrowding 🚶‍♀️🚶‍♂️.
 Provides accurate preparation and waiting time calculation ⏳.
 
 Ensures an organized, stress-free dining experience 🎉.
+![The website (3)](https://github.com/user-attachments/assets/e8c4e57e-853b-429e-b71b-abcf9f09a84f)
+![The website (2)](https://github.com/user-attachments/assets/add749e7-71fb-420a-b6e6-a14b62c11218)
+![WhatsApp Image 2025-09-07 at 05 01 41_782d1f9a](https://github.com/user-attachments/assets/d284fd3c-8d3d-40cf-8fae-6f5bad79983a)
+
